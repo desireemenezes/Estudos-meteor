@@ -1,27 +1,22 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
-
-import './main.html';
-
 const construtor = function () {
   // counter starts at 0
   this.tabuada = new ReactiveVar('');
-  
+
 }
 
 const metodos = {
   getTabuada: function() {
     let tabuada = '';
-    const numero = Template.instance().tabuada.get();    
+    const numero = Template.instance().tabuada.get();
     for(let i=1; i<=9; i++){
       tabuada += `${numero} X ${i} = ${i*numero} <br />`;
     }
-    return tabuada;   
+    return tabuada;
   }
 }
 
 const eventos = {
-  'keyup #numero': function(event, instance) {
+  'keyup #numero, change #numero': function(event, instance) {
     const campo = document.getElementById('numero').value;
     if(campo > 0 && campo < 10){
       instance.tabuada.set(event.target.value || 1)
@@ -29,8 +24,8 @@ const eventos = {
   }
 }
 
-Template.hello.onCreated( construtor );
+Template.tabuada.onCreated( construtor );
 
-Template.hello.helpers( metodos );
+Template.tabuada.helpers( metodos );
 
-Template.hello.events( eventos );
+Template.tabuada.events( eventos );

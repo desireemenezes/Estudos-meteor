@@ -1,0 +1,17 @@
+<head>
+  <title>appEstudos</title>
+</head>
+
+<body>
+
+  {{> selectExercicio}}
+
+  {{#if exercicios 'tabuada'}}
+    {{> tabuada}}
+  {{/if}} 
+
+  {{#if exercicios 'divisao'}}
+    {{> divisao}}
+  {{/if}}
+
+</body>

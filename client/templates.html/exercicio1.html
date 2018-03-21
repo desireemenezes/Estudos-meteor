@@ -1,23 +1,13 @@
-<head>
-  <title>appEstudos</title>
-</head>
-
-<body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  
-</body>
-
-<template name="hello">
+<template name="tabuada">
 
   <div>
+    <h1> Exercicio {{nomeExercicio}} </h1>
     <h3>Calcule a tabuada!</h3>
     <div id="resultado">Escolha um número entre 1 e 9:</div><br />
     <input type="number" id="numero" min="1" max="9">
   </div>
 
- <h4> {{{getTabuada}}}
+ <h4> {{{ getTabuada }}}
 </h4>
 
 </template>
