@@ -1,0 +1,15 @@
+<template name="resistencia">
+  <div class="container">
+    <div class="row">
+      <div>Calcule A Resistencia Elétrica!</div>
+      <input placeholder="tensao" id="v" type="number">
+      <input placeholder="corrente" id="i" type="number">
+      <button type="button" class="btn btn-primary btn-lg" >Click-me!</button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      {{{ getResistencia }}}
+    </div>
+  </div>
+</template>
