@@ -12,7 +12,7 @@ Template.resistencia.helpers ({
     if (isNaN(r)) return `A corrênte elétrica é:`
     else return `A corrênte elétrica é: ${r}`
 
-  }
+}
 });
 
 Template.resistencia.events({
