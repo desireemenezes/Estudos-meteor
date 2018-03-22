@@ -1,17 +1,18 @@
-<template name="hipotenusa">
+<template name="corrente">
 
   <div class="container">
     <div class="row">
-     {{ > title }}
-      <legend>Some os catetos para achar a hipotenusa!</legend>
-      <input id="a" type="number"/>
-      <input id="b" type="number"/>
+      <div>Calcule A Corrente Elétrica!</div>
+      <input placeholder="tensao" id="v" type="number">
+      <input placeholder="resistencia" id="r" type="number">
       <button type="button" class="btn btn-primary btn-lg" >Click-me!</button>
     </div>
   </div>
+
   <div class="container">
     <div class="row">
-      {{{ getHipotenusa }}}
+      {{{ getCorrente }}}
     </div>
   </div>
+
 </template>

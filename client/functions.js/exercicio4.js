@@ -17,7 +17,7 @@ Template.palidromo.helpers ({
   });
 
 Template.palidromo.events({
-  'keyup #palavra ,click button'(event, template) {
+  'keyup #palavra'(event, template) {
     const a = document.getElementById('palavra').value;
     template.str.set(a);
 

@@ -1,11 +1,17 @@
 <template name="divisao">
 
-  <div>
-    <h1> Exercicio {{nomeExercicio}} </h1>
-    <fieldset>
+  <div class="container">
+    <div class="row">
+      {{> title }}
+      <fieldset>
         <legend>Digite um número:</legend>
-        <input id="divisao" type="number"/> <button>Dividir!</button>
+        <input id="divisao" type="number"/>  <button type="button" class="btn btn-primary btn-lg">Dividir!</button>
       </fieldset>
     </div>
-    <p> {{{ getDivisao }}} </p>
+  </div>
+  <div class="container">
+    <div class="row">
+      {{{ getDivisao }}}
+    </div>
+  </div>
 </template>
