@@ -1,6 +1,6 @@
 Template.corrente.onCreated(function() {
-  this.resistencia = new ReactiveVar(1)
-  this.tensao = new ReactiveVar(1)
+  this.resistencia = new ReactiveVar()
+  this.tensao = new ReactiveVar()
 });
 
 Template.corrente.helpers ({
@@ -9,14 +9,16 @@ Template.corrente.helpers ({
     const v = Template.instance().tensao.get();
 
     let i = v / r
-    return `A corrênte elétrica é: ${i}`
-  }
-})
+    if (isNaN(i)) return `A corrênte elétrica é:`
+    else return `A corrênte elétrica é: ${i}`
+  
+}
+});
 
 Template.corrente.events({
   'click button'(event, template) {
-    const r = document.getElementById('r').value || 1;
-    const v = document.getElementById('v').value || 1;
+    const r = document.getElementById('r').value
+    const v = document.getElementById('v').value
     template.resistencia.set(r);
     template.tensao.set(v);
   }
