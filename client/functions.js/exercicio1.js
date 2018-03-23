@@ -6,21 +6,17 @@ const construtor = function () {
 
 const metodos = {
   getTabuada: function() {
-    let tabuada = '';
-    const numero = Template.instance().tabuada.get();
-    for(let i=1; i<=9; i++){
-      tabuada += `${numero} X ${i} = ${i*numero} <br />`;
-    }
-    return tabuada;
+    return Template.instance().tabuada.get();
   }
 }
 
 const eventos = {
   'keyup #numero, change #numero': function(event, instance) {
     const campo = document.getElementById('numero').value;
-    if(campo > 0 && campo < 10){
-      instance.tabuada.set(event.target.value || 1)
-    }
+      Meteor.call('CalculaTabuada', campo, (error, result) => {
+        instance.tabuada.set(result)
+
+      })
   }
 }
 
