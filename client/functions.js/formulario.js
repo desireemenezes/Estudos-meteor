@@ -21,7 +21,7 @@ Template.formClic.events({
     const pessoas = template.pessoas.get();
     pessoas.push(pessoa)
 
-Template.instance().pessoas.get()
+
     template.pessoas.set(pessoas)
   }
 });

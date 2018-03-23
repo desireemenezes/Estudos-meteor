@@ -3,23 +3,17 @@ Template.palidromo.onCreated(function() {
 });
 
 Template.palidromo.helpers ({
-  palavra() {
-    const palid = Template.instance().str.get();
-    let palavraDigitada = palid
-    let palavraModificada = palavraDigitada.split("").reverse().join("");
-    if (palavraDigitada.toLowerCase() === palavraModificada.toLowerCase()) {
-      return `${palavraDigitada} é um palidromo`
-    }else {
-      return `${palavraDigitada} não é um palidromo`
-    }
+  palavra: function () {
+      return Template.instance().str.get();
 
     }
   });
 
 Template.palidromo.events({
   'keyup #palavra'(event, template) {
-    const a = document.getElementById('palavra').value;
-    template.str.set(a);
-
+    const a= document.getElementById('palavra').value;
+    Meteor.call('palidromo', a, (e, r) => {
+      template.str.set(r);
+    })
   }
 });
