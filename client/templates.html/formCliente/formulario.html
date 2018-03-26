@@ -1,0 +1,32 @@
+<template name='formClic'>
+  <div class="container">
+  <div class="row">
+    <legend>Cadastro de Cliente</legend>
+    <input type="text" id="nome" value="nome" maxlength="20" min="10"><br>
+    <input type="date" id="date" pattern="dd/mm/YYYY"><br>
+    <input type="email" id="email" value="email"><br>
+    <input type="password" id="password" value="password"><br>
+
+    <select id="profissao" name=""><br>
+      <option value="" label="Selecione"></option>
+      <option value="estudante">Estudante</option>
+      <option value="funcionario">Funcionario</option>
+      <option value="freelancer">freelancer</option>
+    </select><br>
+
+    <button type="button" name="button" class="btn btn-primary btn-lg">OK</button><br><br><br>
+
+  </div>
+ </div>
+ <div class="container">
+ <div class="row">
+    {{#each getPessoas}}
+      {{ nome }} - {{ dataNasc }} - {{ profissao }} <br>
+    {{else}}
+      Nenhuma pessoa cadastrada.
+    {{/each}}
+
+  </div>
+</div>
+
+</template>
